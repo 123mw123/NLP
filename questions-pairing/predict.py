@@ -44,13 +44,13 @@ def is_duplicate(question_1, question_2):
 
 if __name__ == '__main__':
 
-	word_to_index, index_to_word, word_to_vec_map = read_glove_vecs('/home/jason/Documents/glove.6B/glove.6B.300d.txt')
+	word_to_index, index_to_word, word_to_vec_map = read_glove_vecs('./glove.6B/glove.6B.300d.txt')
 
-	json_file = open('./sgd_ce_equal.json', 'r')
+	json_file = open('./lstm_25e.json', 'r')
 	loaded_model_json = json_file.read()
 	json_file.close()
 	loaded_model = model_from_json(loaded_model_json)
-	loaded_model.load_weights("./sgd_ce_equal.h5")
+	loaded_model.load_weights("./lstm_25e.h5")
 	print("Loaded model from disk")
 
 	input_1 = input("enter first question: ")
